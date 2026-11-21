@@ -17,14 +17,14 @@ int main(){
         printf("Enter burst time of P%d",i+1);
         scanf("%d",&p[i].burst_time);
 
-        p[i].remaining_time=p[i].burst_time
+        p[i].remaining_time=p[i].burst_time;
     }
     fcfs(p,n);
 
-    printf("FCFS SCHEDULING");
+    printf("FCFS SCHEDULING\n");
     float total_wt=0;
     float total_tat=0;
-    for (int i=0;i<n;i++){}
+    for (int i=0;i<n;i++){
     printf("P%d\t%d\t%d\t%d\t%d\t%d\t%d\n",
     p[i].pid,
     p[i].arrival_time,
@@ -34,6 +34,8 @@ int main(){
     p[i].response_time);
     total_wt+=p[i].waiting_time;
     total_tat+=p[i].turnaround_time;
-
+    }
+    printf("Average waiting time: %.2f",total_wt/n);
+    printf("Average turnaround time: %.2f\n",total_tat/n);
     return 0;
 }
